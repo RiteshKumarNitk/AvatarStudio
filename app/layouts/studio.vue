@@ -12,7 +12,7 @@
       @fullscreen="toggleFullscreen"
     />
     <div class="flex-1 flex overflow-hidden">
-      <div class="flex-1 relative">
+      <div class="flex-1 relative overflow-hidden isolate">
         <ClientOnly>
           <AvatarViewer ref="viewerRef" />
         </ClientOnly>

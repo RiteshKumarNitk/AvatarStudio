@@ -107,7 +107,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
       const _component_AnimationSelector = resolveComponent("AnimationSelector");
       _push(`<aside${ssrRenderAttrs(mergeProps({
         class: [
-          "h-full overflow-y-auto border-l border-[var(--color-border)] bg-[var(--color-surface)] transition-all duration-300",
+          "h-full overflow-y-auto border-l border-[var(--color-border)] bg-[var(--color-surface)] transition-all duration-300 relative z-10",
           unref(isOpen) ? "w-80" : "w-0 overflow-hidden border-l-0"
         ]
       }, _attrs))}>`);
@@ -117,7 +117,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
           _push(`<button class="${ssrRenderClass([
             "px-2.5 py-1.5 text-xs rounded-md transition-all border",
             unref(activeTab) === tab.id ? "bg-[var(--color-accent)] text-white border-[var(--color-accent)]" : "bg-[var(--color-bg)] text-[var(--color-text-secondary)] border-[var(--color-border)] hover:border-[var(--color-accent)]"
-          ])}">${ssrInterpolate(tab.icon)} ${ssrInterpolate(tab.label)}</button>`);
+          ])}" type="button">${ssrInterpolate(tab.icon)} ${ssrInterpolate(tab.label)}</button>`);
         });
         _push(`<!--]--></div><div class="space-y-4">`);
         if (unref(activeTab) === "hair") {
@@ -378,7 +378,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         onSave: openSaveModal,
         onFullscreen: toggleFullscreen
       }, null, _parent));
-      _push(`<div class="flex-1 flex overflow-hidden"><div class="flex-1 relative">`);
+      _push(`<div class="flex-1 flex overflow-hidden"><div class="flex-1 relative overflow-hidden isolate">`);
       _push(ssrRenderComponent(_component_ClientOnly, null, {}, _parent));
       _push(`</div>`);
       _push(ssrRenderComponent(_component_CustomizationPanel, {
@@ -428,4 +428,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=studio-DWsPHP5P.mjs.map
+//# sourceMappingURL=studio-C-Il3_-t.mjs.map

@@ -2018,7 +2018,7 @@ const Body = defineComponent({
 });
 const layouts = {
   default: defineAsyncComponent(() => import('./default-CbWlS8Yb.mjs').then((m) => m.default || m)),
-  studio: defineAsyncComponent(() => import('./studio-DWsPHP5P.mjs').then((m) => m.default || m))
+  studio: defineAsyncComponent(() => import('./studio-C-Il3_-t.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
 const LayoutLoader = defineComponent({

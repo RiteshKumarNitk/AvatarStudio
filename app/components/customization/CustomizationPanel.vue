@@ -1,7 +1,7 @@
 <template>
   <aside
     :class="[
-      'h-full overflow-y-auto border-l border-[var(--color-border)] bg-[var(--color-surface)] transition-all duration-300',
+      'h-full overflow-y-auto border-l border-[var(--color-border)] bg-[var(--color-surface)] transition-all duration-300 relative z-10',
       isOpen ? 'w-80' : 'w-0 overflow-hidden border-l-0'
     ]"
   >
@@ -28,6 +28,7 @@
               ? 'bg-[var(--color-accent)] text-white border-[var(--color-accent)]'
               : 'bg-[var(--color-bg)] text-[var(--color-text-secondary)] border-[var(--color-border)] hover:border-[var(--color-accent)]'
           ]"
+          type="button"
           @click="uiStore.setActiveTab(tab.id)"
         >
           {{ tab.icon }} {{ tab.label }}
@@ -131,6 +132,9 @@
 
 <script setup lang="ts">
 import { CATEGORY_TABS } from '~/utils/constants'
+import { useAvatarStore } from '~/stores/avatar'
+import { useUiStore } from '~/stores/ui'
+import { useAnimationStore } from '~/stores/animation'
 
 const avatarStore = useAvatarStore()
 const uiStore = useUiStore()

@@ -40,5 +40,5 @@ defineEmits<{
 }>()
 
 const styles = BEARD_STYLES
-const colors = BEARD_COLORS.map(c => ({ label: c.label, value: c.value }))
+const colors = BEARD_COLORS.map(c => ({ label: c.label, value: c.value, hex: c.value }))
 </script>
