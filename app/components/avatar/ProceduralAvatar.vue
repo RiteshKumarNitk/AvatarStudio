@@ -57,6 +57,8 @@
 </template>
 
 <script setup lang="ts">
+import HairMesh from './HairMesh.vue'
+import AccessoriesMesh from './AccessoriesMesh.vue'
 import type { AvatarConfig, AnimationName } from '~/types/avatar'
 import { useLoop } from '@tresjs/core'
 
