@@ -20,7 +20,7 @@
     "@tresjs/nuxt": "^5.6.1",
     "@types/three": "^0.172.0",
     "@vueuse/core": "^12.8.2",
-    "three": "^0.172.0",
+    "three": "^0.184.0",
     "typescript": "^5.7.3"
   }
 }
