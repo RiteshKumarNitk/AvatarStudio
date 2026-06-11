@@ -76,6 +76,8 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({ ssr: false })
+
 const avatarStore = useAvatarStore()
 
 const showDeleteModal = ref(false)

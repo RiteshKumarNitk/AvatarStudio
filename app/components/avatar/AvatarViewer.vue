@@ -22,20 +22,23 @@
       ref="controlsRef"
       :auto-rotate="autoRotate"
     />
-    <Suspense>
-      <ProceduralAvatar
-        ref="avatarRef"
-        :config="avatarStore.config"
-        :animation="animationStore.currentAnimation"
-        :animation-playing="animationStore.isPlaying"
-        :animation-speed="animationStore.speed"
-      />
-    </Suspense>
+    <ProceduralAvatar
+      ref="avatarRef"
+      :config="avatarStore.config"
+      :animation="animationStore.currentAnimation"
+      :animation-playing="animationStore.isPlaying"
+      :animation-speed="animationStore.speed"
+    />
     <StageEnvironment />
   </TresCanvas>
 </template>
 
 <script setup lang="ts">
+import SceneLighting from './SceneLighting.vue'
+import StageEnvironment from './StageEnvironment.vue'
+import SceneControls from './SceneControls.vue'
+import ProceduralAvatar from './ProceduralAvatar.vue'
+
 const avatarStore = useAvatarStore()
 const animationStore = useAnimationStore()
 

@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  compatibilityDate: '2026-06-11',
+  compatibilityDate: '2025-03-01',
   future: {
     compatibilityVersion: 4,
   },
@@ -18,7 +18,7 @@ export default defineNuxtConfig({
   },
 
   tres: {
-    devtools: true,
+    devtools: false,
     glsl: false,
   },
 

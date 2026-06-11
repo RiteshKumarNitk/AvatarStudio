@@ -58,7 +58,7 @@
 
 <script setup lang="ts">
 import type { AvatarConfig, AnimationName } from '~/types/avatar'
-import { useRenderLoop } from '@tresjs/core'
+import { useLoop } from '@tresjs/core'
 
 const props = defineProps<{
   config: AvatarConfig
@@ -124,7 +124,7 @@ function getArmAngles(t: number, anim: AnimationName) {
   }
 }
 
-useRenderLoop(({ delta }) => {
+useLoop(({ delta }) => {
   if (!props.animationPlaying) return
 
   animTime.value += delta * props.animationSpeed

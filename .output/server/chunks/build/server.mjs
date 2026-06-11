@@ -733,13 +733,16 @@ const unhead_k2P3m_ZDyjlr2mMYnoDPwavjsDN8hBlk9cFai0bbopU = /* @__PURE__ */ defin
 function toArray$1(value) {
   return Array.isArray(value) ? value : [value];
 }
+const __nuxt_page_meta$1 = { ssr: false };
 const __nuxt_page_meta = {
-  layout: "studio"
+  layout: "studio",
+  ssr: false
 };
 const _routes = [
   {
     name: "gallery",
     path: "/gallery",
+    meta: __nuxt_page_meta$1 || {},
     component: () => import('./gallery-DFAwe4gb.mjs')
   },
   {

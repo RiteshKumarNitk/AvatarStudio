@@ -4,6 +4,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'studio'
+  layout: 'studio',
+  ssr: false,
 })
 </script>
