@@ -1,5 +1,23 @@
 import type { AvatarConfig, CustomizationOption, ColorOption, AnimationClipData } from '~/types/avatar'
 
+export const BACKGROUND_STYLES: CustomizationOption<AvatarConfig['background']>[] = [
+  { label: 'Studio', value: 'studio' },
+  { label: 'Sunset', value: 'sunset' },
+  { label: 'Forest', value: 'forest' },
+  { label: 'Ocean', value: 'ocean' },
+  { label: 'Midnight', value: 'midnight' },
+  { label: 'Minimal', value: 'minimal' },
+]
+
+export const BACKGROUND_COLORS: Record<string, string> = {
+  studio: '#2a2a3a',
+  sunset: '#1a0a2a',
+  forest: '#0a1a0a',
+  ocean: '#0a0a2a',
+  midnight: '#050510',
+  minimal: '#f0f0f0',
+}
+
 export const DEFAULT_AVATAR_CONFIG: AvatarConfig = {
   skinTone: '#f5d0b0',
   eyeColor: '#4a7a9c',
@@ -14,6 +32,11 @@ export const DEFAULT_AVATAR_CONFIG: AvatarConfig = {
   hatColor: '#1e293b',
   shoes: 'sneakers',
   shoesColor: '#374151',
+  background: 'studio',
+  beard: 'none',
+  beardColor: '#2d1b0e',
+  bodyType: 'average',
+  bodyHeight: 1,
 }
 
 export const SKIN_TONES: ColorOption[] = [
@@ -117,12 +140,40 @@ export const ANIMATIONS: AnimationClipData[] = [
   { name: 'jump', label: 'Jump', duration: 1.2, loop: false, icon: 'i-heroicons-arrow-up' },
 ]
 
+export const BEARD_STYLES: CustomizationOption<AvatarConfig['beard']>[] = [
+  { label: 'None', value: 'none' },
+  { label: 'Stubble', value: 'stubble' },
+  { label: 'Short', value: 'short' },
+  { label: 'Goatee', value: 'goatee' },
+  { label: 'Full', value: 'full' },
+]
+
+export const BODY_TYPES: CustomizationOption<AvatarConfig['bodyType']>[] = [
+  { label: 'Slim', value: 'slim' },
+  { label: 'Average', value: 'average' },
+  { label: 'Athletic', value: 'athletic' },
+  { label: 'Heavy', value: 'heavy' },
+]
+
+export const BEARD_COLORS: ColorOption[] = [
+  { label: 'Black', value: '#0a0a0a', hex: '#0a0a0a' },
+  { label: 'Dark Brown', value: '#2d1b0e', hex: '#2d1b0e' },
+  { label: 'Brown', value: '#5c3a1e', hex: '#5c3a1e' },
+  { label: 'Auburn', value: '#8b4513', hex: '#8b4513' },
+  { label: 'Red', value: '#c43a1e', hex: '#c43a1e' },
+  { label: 'Blonde', value: '#e8c84a', hex: '#e8c84a' },
+  { label: 'Gray', value: '#8a8a8a', hex: '#8a8a8a' },
+]
+
 export const CATEGORY_TABS = [
   { id: 'hair', label: 'Hair', icon: '✂️' },
   { id: 'face', label: 'Face', icon: '😊' },
   { id: 'eyes', label: 'Eyes', icon: '👁️' },
+  { id: 'beard', label: 'Beard', icon: '🧔' },
+  { id: 'body', label: 'Body', icon: '💪' },
   { id: 'clothing', label: 'Clothing', icon: '👕' },
   { id: 'accessories', label: 'Accessories', icon: '✨' },
   { id: 'hats', label: 'Hats', icon: '🎩' },
   { id: 'shoes', label: 'Shoes', icon: '👟' },
+  { id: 'background', label: 'Background', icon: '🎨' },
 ] as const

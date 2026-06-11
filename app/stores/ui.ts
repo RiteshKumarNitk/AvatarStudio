@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export type SidebarTab = 'hair' | 'face' | 'eyes' | 'clothing' | 'accessories' | 'hats' | 'shoes'
+export type SidebarTab = 'hair' | 'face' | 'eyes' | 'beard' | 'body' | 'clothing' | 'accessories' | 'hats' | 'shoes' | 'background'
 
 export const useUiStore = defineStore('ui', () => {
   const sidebarOpen = ref(true)

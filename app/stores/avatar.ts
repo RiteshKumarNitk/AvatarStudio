@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import type { AvatarConfig, SavedAvatar, ExportData } from '~/types/avatar'
-import { DEFAULT_AVATAR_CONFIG } from '~/utils/constants'
+import { DEFAULT_AVATAR_CONFIG, HAIR_STYLES, HAIR_COLORS, SKIN_TONES, EYE_COLORS, FACE_SHAPES, CLOTHING_OPTIONS, ACCESSORY_OPTIONS, HAT_OPTIONS, SHOE_OPTIONS, BACKGROUND_STYLES, BEARD_STYLES, BEARD_COLORS, BODY_TYPES } from '~/utils/constants'
 
 export const useAvatarStore = defineStore('avatar', () => {
   const config = ref<AvatarConfig>({ ...DEFAULT_AVATAR_CONFIG })
@@ -76,6 +76,36 @@ export const useAvatarStore = defineStore('avatar', () => {
     }
   }
 
+  function randomizeConfig() {
+    const pick = <T>(arr: T[]) => arr[Math.floor(Math.random() * arr.length)]
+    const randColor = () => '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')
+    const clothingColors = ['#ef4444', '#f97316', '#eab308', '#22c55e', '#3b82f6', '#8b5cf6', '#ec4899', '#14b8a6', '#ffffff', '#000000', '#64748b', '#a855f7']
+    const accessoryColors = ['#fbbf24', '#94a3b8', '#f472b6', '#000000', '#ffffff']
+    const hatColors = ['#1e293b', '#ef4444', '#3b82f6', '#000000', '#ffffff', '#22c55e']
+    const shoeColors = ['#374151', '#000000', '#8b4513', '#ef4444', '#3b82f6', '#ffffff']
+
+    config.value = {
+      skinTone: pick(SKIN_TONES).value,
+      eyeColor: pick(EYE_COLORS).value,
+      hairStyle: pick(HAIR_STYLES).value,
+      hairColor: pick(HAIR_COLORS).value,
+      faceShape: pick(FACE_SHAPES).value,
+      clothing: pick(CLOTHING_OPTIONS).value,
+      clothingColor: pick(clothingColors),
+      accessory: pick(ACCESSORY_OPTIONS).value,
+      accessoryColor: pick(accessoryColors),
+      hat: pick(HAT_OPTIONS).value,
+      hatColor: pick(hatColors),
+      shoes: pick(SHOE_OPTIONS).value,
+      shoesColor: pick(shoeColors),
+      background: pick(BACKGROUND_STYLES).value,
+      beard: pick(BEARD_STYLES).value,
+      beardColor: pick(BEARD_COLORS).value,
+      bodyType: pick(BODY_TYPES).value,
+      bodyHeight: 0.85 + Math.random() * 0.3,
+    }
+  }
+
   function importConfig(data: ExportData) {
     if (data.type === 'avatar-config' && data.data) {
       config.value = { ...data.data }
@@ -125,6 +155,7 @@ export const useAvatarStore = defineStore('avatar', () => {
     deleteAvatar,
     exportConfig,
     importConfig,
+    randomizeConfig,
     persistToStorage,
     loadFromStorage,
   }

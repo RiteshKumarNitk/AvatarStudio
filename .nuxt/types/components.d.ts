@@ -23,6 +23,9 @@ interface _GlobalComponents {
   AvatarSceneLighting: typeof import("../../app/components/avatar/SceneLighting.vue")['default']
   AvatarStageEnvironment: typeof import("../../app/components/avatar/StageEnvironment.vue")['default']
   CustomizationAccessorySelector: typeof import("../../app/components/customization/AccessorySelector.vue")['default']
+  CustomizationBackgroundSelector: typeof import("../../app/components/customization/BackgroundSelector.vue")['default']
+  CustomizationBeardSelector: typeof import("../../app/components/customization/BeardSelector.vue")['default']
+  CustomizationBodySelector: typeof import("../../app/components/customization/BodySelector.vue")['default']
   CustomizationClothingSelector: typeof import("../../app/components/customization/ClothingSelector.vue")['default']
   CustomizationPanel: typeof import("../../app/components/customization/CustomizationPanel.vue")['default']
   CustomizationEyeColorSelector: typeof import("../../app/components/customization/EyeColorSelector.vue")['default']
@@ -160,6 +163,9 @@ interface _GlobalComponents {
   LazyAvatarSceneLighting: LazyComponent<typeof import("../../app/components/avatar/SceneLighting.vue")['default']>
   LazyAvatarStageEnvironment: LazyComponent<typeof import("../../app/components/avatar/StageEnvironment.vue")['default']>
   LazyCustomizationAccessorySelector: LazyComponent<typeof import("../../app/components/customization/AccessorySelector.vue")['default']>
+  LazyCustomizationBackgroundSelector: LazyComponent<typeof import("../../app/components/customization/BackgroundSelector.vue")['default']>
+  LazyCustomizationBeardSelector: LazyComponent<typeof import("../../app/components/customization/BeardSelector.vue")['default']>
+  LazyCustomizationBodySelector: LazyComponent<typeof import("../../app/components/customization/BodySelector.vue")['default']>
   LazyCustomizationClothingSelector: LazyComponent<typeof import("../../app/components/customization/ClothingSelector.vue")['default']>
   LazyCustomizationPanel: LazyComponent<typeof import("../../app/components/customization/CustomizationPanel.vue")['default']>
   LazyCustomizationEyeColorSelector: LazyComponent<typeof import("../../app/components/customization/EyeColorSelector.vue")['default']>

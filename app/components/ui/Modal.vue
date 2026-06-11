@@ -18,7 +18,8 @@
               </svg>
             </button>
           </div>
-          <div class="text-xs text-[var(--color-text-secondary)] mb-4">{{ message }}</div>
+          <div v-if="message" class="text-xs text-[var(--color-text-secondary)] mb-4">{{ message }}</div>
+          <slot />
           <div class="flex justify-end gap-2">
             <button
               class="px-3 py-1.5 text-xs rounded-lg border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:bg-[var(--color-border)] transition-colors"

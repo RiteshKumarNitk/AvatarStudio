@@ -57,6 +57,12 @@ export type AnimationName =
   | 'dance'
   | 'jump'
 
+export type BackgroundStyle = 'studio' | 'sunset' | 'forest' | 'ocean' | 'midnight' | 'minimal'
+
+export type BeardStyle = 'none' | 'stubble' | 'short' | 'goatee' | 'full'
+
+export type BodyType = 'slim' | 'average' | 'athletic' | 'heavy'
+
 export interface AvatarConfig {
   skinTone: string
   eyeColor: string
@@ -71,6 +77,11 @@ export interface AvatarConfig {
   hatColor: string
   shoes: ShoeType
   shoesColor: string
+  background?: BackgroundStyle
+  beard?: BeardStyle
+  beardColor?: string
+  bodyType?: BodyType
+  bodyHeight?: number
 }
 
 export interface AvatarState {

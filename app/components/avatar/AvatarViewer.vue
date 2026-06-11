@@ -1,11 +1,10 @@
 <template>
   <TresCanvas
     ref="canvasRef"
-    window-size
-    clear-color="#00000000"
+    :clear-color="bgColor"
     :render-mode="'always'"
     :shadows="false"
-    :alpha="true"
+    :alpha="bgAlpha"
     :power-preference="'high-performance'"
     :tone-mapping="true"
   >
@@ -34,6 +33,7 @@
 </template>
 
 <script setup lang="ts">
+import { BACKGROUND_COLORS } from '~/utils/constants'
 import SceneLighting from './SceneLighting.vue'
 import StageEnvironment from './StageEnvironment.vue'
 import SceneControls from './SceneControls.vue'
@@ -42,17 +42,15 @@ import ProceduralAvatar from './ProceduralAvatar.vue'
 const avatarStore = useAvatarStore()
 const animationStore = useAnimationStore()
 
+const bgColor = computed(() => BACKGROUND_COLORS[avatarStore.config.background ?? 'studio'] ?? '#2a2a3a')
+const bgAlpha = computed(() => avatarStore.config.background === 'minimal' ? 0 : 1)
+
 const canvasRef = ref()
 const cameraRef = ref()
 const controlsRef = ref()
 const avatarRef = ref()
 
-const autoRotate = ref(true)
-
-function onControlsUpdate() {
-  autoRotate.value = false
-  setTimeout(() => { autoRotate.value = true }, 3000)
-}
+const autoRotate = ref(false)
 
 function rotateLeft() {
   const controls = controlsRef.value?.instance

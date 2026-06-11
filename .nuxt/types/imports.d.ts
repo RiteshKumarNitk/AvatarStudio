@@ -3,6 +3,11 @@ export {}
 declare global {
   const ACCESSORY_OPTIONS: typeof import('../../app/utils/constants').ACCESSORY_OPTIONS
   const ANIMATIONS: typeof import('../../app/utils/constants').ANIMATIONS
+  const BACKGROUND_COLORS: typeof import('../../app/utils/constants').BACKGROUND_COLORS
+  const BACKGROUND_STYLES: typeof import('../../app/utils/constants').BACKGROUND_STYLES
+  const BEARD_COLORS: typeof import('../../app/utils/constants').BEARD_COLORS
+  const BEARD_STYLES: typeof import('../../app/utils/constants').BEARD_STYLES
+  const BODY_TYPES: typeof import('../../app/utils/constants').BODY_TYPES
   const CATEGORY_TABS: typeof import('../../app/utils/constants').CATEGORY_TABS
   const CLOTHING_OPTIONS: typeof import('../../app/utils/constants').CLOTHING_OPTIONS
   const DEFAULT_AVATAR_CONFIG: typeof import('../../app/utils/constants').DEFAULT_AVATAR_CONFIG
@@ -269,6 +274,11 @@ declare module 'vue' {
   interface ComponentCustomProperties {
     readonly ACCESSORY_OPTIONS: UnwrapRef<typeof import('../../app/utils/constants')['ACCESSORY_OPTIONS']>
     readonly ANIMATIONS: UnwrapRef<typeof import('../../app/utils/constants')['ANIMATIONS']>
+    readonly BACKGROUND_COLORS: UnwrapRef<typeof import('../../app/utils/constants')['BACKGROUND_COLORS']>
+    readonly BACKGROUND_STYLES: UnwrapRef<typeof import('../../app/utils/constants')['BACKGROUND_STYLES']>
+    readonly BEARD_COLORS: UnwrapRef<typeof import('../../app/utils/constants')['BEARD_COLORS']>
+    readonly BEARD_STYLES: UnwrapRef<typeof import('../../app/utils/constants')['BEARD_STYLES']>
+    readonly BODY_TYPES: UnwrapRef<typeof import('../../app/utils/constants')['BODY_TYPES']>
     readonly CATEGORY_TABS: UnwrapRef<typeof import('../../app/utils/constants')['CATEGORY_TABS']>
     readonly CLOTHING_OPTIONS: UnwrapRef<typeof import('../../app/utils/constants')['CLOTHING_OPTIONS']>
     readonly DEFAULT_AVATAR_CONFIG: UnwrapRef<typeof import('../../app/utils/constants')['DEFAULT_AVATAR_CONFIG']>

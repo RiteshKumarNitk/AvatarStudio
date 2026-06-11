@@ -34,7 +34,7 @@ export { defineLazyHydrationComponent } from '#app/composables/lazy-hydration';
 export { useAvatarAnimation } from '../app/composables/useAvatarAnimation';
 export { useAvatarExport } from '../app/composables/useAvatarExport';
 export { useAvatarPersistence } from '../app/composables/useAvatarPersistence';
-export { DEFAULT_AVATAR_CONFIG, SKIN_TONES, EYE_COLORS, HAIR_STYLES, HAIR_COLORS, FACE_SHAPES, CLOTHING_OPTIONS, ACCESSORY_OPTIONS, HAT_OPTIONS, SHOE_OPTIONS, ANIMATIONS, CATEGORY_TABS } from '../app/utils/constants';
+export { BACKGROUND_STYLES, BACKGROUND_COLORS, DEFAULT_AVATAR_CONFIG, SKIN_TONES, EYE_COLORS, HAIR_STYLES, HAIR_COLORS, FACE_SHAPES, CLOTHING_OPTIONS, ACCESSORY_OPTIONS, HAT_OPTIONS, SHOE_OPTIONS, ANIMATIONS, BEARD_STYLES, BODY_TYPES, BEARD_COLORS, CATEGORY_TABS } from '../app/utils/constants';
 export { useAnimationStore } from '../app/stores/animation';
 export { useAvatarStore } from '../app/stores/avatar';
 export { useUiStore, SidebarTab } from '../app/stores/ui';

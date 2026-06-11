@@ -10,29 +10,38 @@ A modern 3D Avatar Studio built with **Nuxt 4**, **TresJS**, **Three.js**, and *
 - **Skin Tones**: 10 skin tones from porcelain to ebony
 - **Eye Colors**: Blue, green, brown, hazel, gray, amber, violet
 - **Face Shapes**: Round, oval, square, heart, diamond
-- **Clothing**: T-shirt, hoodie, jacket, suit, tank top, dress
+- **Clothing**: T-shirt, hoodie, jacket, suit, tank top, dress — **unique 3D shapes per style** (hoodie has a hood, jacket with lapels, dress flares at bottom)
 - **Accessories**: Glasses, sunglasses, necklace, earrings, watch
-- **Hats**: Baseball, beanie, top hat, cap
-- **Shoes**: Sneakers, boots, sandals, formal
+- **Hats**: Baseball, beanie, top hat, cap — **rendered in 3D**
+- **Shoes**: Sneakers, boots, sandals, formal — **rendered in 3D**
+- **Facial Details**: Eyes, nose, mouth, eyebrows, ears — all fully procedural
+- **Facial Hair**: Stubble, short beard, goatee, full beard — matches hair color
+- **Body Types**: Slim, average, athletic, heavy — with adjustable height slider
+- **Realistic Body Proportions**: Shaped torso, neck, hands, feet
+- **Background Environments**: 6 scenes (Studio, Sunset, Forest, Ocean, Midnight, Minimal) with matching colors
 
 ### Character Controls
 - Orbit controls for rotate, zoom, and pan
 - Rotate left/right buttons
-- Reset camera view
-- Full-screen mode
-- Screenshot capture (PNG download)
+- Reset camera view (keyboard: **R**)
+- Full-screen mode (keyboard: **F**)
+- Screenshot capture as PNG (keyboard: **S**)
 - Export/Import avatar as JSON
+- **Randomize button** — instantly generate a random avatar
+- **Save with naming** — save dialog lets you name your avatar before saving
+- **Keyboard shortcuts**: R=reset camera, S=screenshot, ←→=rotate, F=fullscreen
+- Manual rotation only — auto-rotate disabled for focused editing
 
 ### Animation System
-- Idle (breathing)
-- Walk
-- Run
-- Wave
-- Sit
-- Dance
-- Jump
+- Idle (breathing with subtle body sway)
+- Walk (arms and legs swing in opposition)
+- Run (faster arm and leg motion)
+- Wave (one arm raises and waves)
+- Sit (legs bend forward)
+- Dance (full body groove with arm and leg movement)
+- Jump (arms raise and legs tuck)
 
-Speed control from 0.1x to 3x.
+Speed control from 0.1x to 3x. Legs animate in sync with arms for walk, run, dance, and jump.
 
 ### Avatar Data Management
 - Save to localStorage

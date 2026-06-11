@@ -743,7 +743,7 @@ const _routes = [
     name: "gallery",
     path: "/gallery",
     meta: __nuxt_page_meta$1 || {},
-    component: () => import('./gallery-DFAwe4gb.mjs')
+    component: () => import('./gallery-DkxE_c-Y.mjs')
   },
   {
     name: "studio",
@@ -754,7 +754,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-D_uRKVdh.mjs')
+    component: () => import('./index-vfmxz350.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -2018,7 +2018,7 @@ const Body = defineComponent({
 });
 const layouts = {
   default: defineAsyncComponent(() => import('./default-CbWlS8Yb.mjs').then((m) => m.default || m)),
-  studio: defineAsyncComponent(() => import('./studio-CtTpkDqA.mjs').then((m) => m.default || m))
+  studio: defineAsyncComponent(() => import('./studio-DWsPHP5P.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
 const LayoutLoader = defineComponent({

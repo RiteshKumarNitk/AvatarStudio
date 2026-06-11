@@ -75,12 +75,31 @@
           @update:hat="avatarStore.updateNested('hat', $event)"
           @update:color="avatarStore.updateNested('hatColor', $event)"
         />
+        <BeardSelector
+          v-if="activeTab === 'beard'"
+          :current-style="config.beard ?? 'none'"
+          :current-color="config.beardColor ?? '#2d1b0e'"
+          @update:style="avatarStore.updateNested('beard', $event)"
+          @update:color="avatarStore.updateNested('beardColor', $event)"
+        />
+        <BodySelector
+          v-if="activeTab === 'body'"
+          :current-type="config.bodyType ?? 'average'"
+          :current-height="config.bodyHeight ?? 1"
+          @update:type="avatarStore.updateNested('bodyType', $event)"
+          @update:height="avatarStore.updateNested('bodyHeight', $event)"
+        />
         <ShoeSelector
           v-if="activeTab === 'shoes'"
           :current-shoes="config.shoes"
           :current-color="config.shoesColor"
           @update:shoes="avatarStore.updateNested('shoes', $event)"
           @update:color="avatarStore.updateNested('shoesColor', $event)"
+        />
+        <BackgroundSelector
+          v-if="activeTab === 'background'"
+          :current="config.background ?? 'studio'"
+          @update:background="avatarStore.updateNested('background', $event)"
         />
       </div>
 

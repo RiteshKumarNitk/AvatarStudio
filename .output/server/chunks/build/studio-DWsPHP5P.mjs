@@ -1,7 +1,7 @@
 import { f as __nuxt_component_0 } from './server.mjs';
-import { defineComponent, ref, resolveComponent, mergeProps, unref, computed, useSSRContext } from 'vue';
-import { ssrRenderAttrs, ssrRenderComponent, ssrRenderList, ssrRenderClass, ssrInterpolate, ssrRenderAttr } from 'vue/server-renderer';
-import { u as useAvatarStore, C as CATEGORY_TABS, A as ANIMATIONS } from './avatar-BjPzhEhc.mjs';
+import { defineComponent, ref, resolveComponent, mergeProps, unref, isRef, withCtx, createVNode, withDirectives, withKeys, vModelText, computed, useSSRContext } from 'vue';
+import { ssrRenderAttrs, ssrRenderComponent, ssrRenderAttr, ssrRenderList, ssrRenderClass, ssrInterpolate } from 'vue/server-renderer';
+import { u as useAvatarStore, C as CATEGORY_TABS, A as ANIMATIONS } from './avatar-kyCfDTh0.mjs';
 import { defineStore } from 'pinia';
 import '../_/nitro.mjs';
 import 'node:http';
@@ -100,7 +100,10 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
       const _component_ClothingSelector = resolveComponent("ClothingSelector");
       const _component_AccessorySelector = resolveComponent("AccessorySelector");
       const _component_HatSelector = resolveComponent("HatSelector");
+      const _component_BeardSelector = resolveComponent("BeardSelector");
+      const _component_BodySelector = resolveComponent("BodySelector");
       const _component_ShoeSelector = resolveComponent("ShoeSelector");
+      const _component_BackgroundSelector = resolveComponent("BackgroundSelector");
       const _component_AnimationSelector = resolveComponent("AnimationSelector");
       _push(`<aside${ssrRenderAttrs(mergeProps({
         class: [
@@ -175,12 +178,40 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
         } else {
           _push(`<!---->`);
         }
+        if (unref(activeTab) === "beard") {
+          _push(ssrRenderComponent(_component_BeardSelector, {
+            "current-style": unref(config).beard ?? "none",
+            "current-color": unref(config).beardColor ?? "#2d1b0e",
+            "onUpdate:style": ($event) => unref(avatarStore).updateNested("beard", $event),
+            "onUpdate:color": ($event) => unref(avatarStore).updateNested("beardColor", $event)
+          }, null, _parent));
+        } else {
+          _push(`<!---->`);
+        }
+        if (unref(activeTab) === "body") {
+          _push(ssrRenderComponent(_component_BodySelector, {
+            "current-type": unref(config).bodyType ?? "average",
+            "current-height": unref(config).bodyHeight ?? 1,
+            "onUpdate:type": ($event) => unref(avatarStore).updateNested("bodyType", $event),
+            "onUpdate:height": ($event) => unref(avatarStore).updateNested("bodyHeight", $event)
+          }, null, _parent));
+        } else {
+          _push(`<!---->`);
+        }
         if (unref(activeTab) === "shoes") {
           _push(ssrRenderComponent(_component_ShoeSelector, {
             "current-shoes": unref(config).shoes,
             "current-color": unref(config).shoesColor,
             "onUpdate:shoes": ($event) => unref(avatarStore).updateNested("shoes", $event),
             "onUpdate:color": ($event) => unref(avatarStore).updateNested("shoesColor", $event)
+          }, null, _parent));
+        } else {
+          _push(`<!---->`);
+        }
+        if (unref(activeTab) === "background") {
+          _push(ssrRenderComponent(_component_BackgroundSelector, {
+            current: unref(config).background ?? "studio",
+            "onUpdate:background": ($event) => unref(avatarStore).updateNested("background", $event)
           }, null, _parent));
         } else {
           _push(`<!---->`);
@@ -289,9 +320,24 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     const uiStore = useUiStore();
     const avatarStore = useAvatarStore();
     const { downloadJson } = useAvatarExport();
-    const { quickSave } = useAvatarPersistence();
+    const { saveCurrent } = useAvatarPersistence();
     const viewerRef = ref();
     const fileInputRef = ref();
+    const showSaveModal = ref(false);
+    const saveName = ref("");
+    function handleRandomize() {
+      avatarStore.randomizeConfig();
+    }
+    function openSaveModal() {
+      saveName.value = `Avatar ${(/* @__PURE__ */ new Date()).toLocaleDateString()}`;
+      showSaveModal.value = true;
+    }
+    function confirmSave() {
+      if (saveName.value.trim()) {
+        saveCurrent(saveName.value.trim());
+      }
+      showSaveModal.value = false;
+    }
     async function captureScreenshot() {
       const dataUrl = await viewerRef.value?.captureScreenshot();
       if (dataUrl) {
@@ -319,15 +365,17 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       const _component_AppToolbar = resolveComponent("AppToolbar");
       const _component_ClientOnly = __nuxt_component_0;
       const _component_CustomizationPanel = __nuxt_component_1;
+      const _component_Modal = resolveComponent("Modal");
       _push(`<div${ssrRenderAttrs(mergeProps({ class: "h-screen flex flex-col bg-[var(--color-bg)]" }, _attrs))}>`);
       _push(ssrRenderComponent(_component_AppToolbar, {
         onRotateLeft: ($event) => unref(viewerRef)?.rotateLeft(),
         onRotateRight: ($event) => unref(viewerRef)?.rotateRight(),
         onResetCamera: ($event) => unref(viewerRef)?.resetCamera(),
+        onRandomize: handleRandomize,
         onScreenshot: captureScreenshot,
         onExport: handleExport,
         onImport: triggerImport,
-        onSave: unref(quickSave),
+        onSave: openSaveModal,
         onFullscreen: toggleFullscreen
       }, null, _parent));
       _push(`<div class="flex-1 flex overflow-hidden"><div class="flex-1 relative">`);
@@ -336,7 +384,39 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       _push(ssrRenderComponent(_component_CustomizationPanel, {
         onClose: ($event) => unref(uiStore).toggleSidebar()
       }, null, _parent));
-      _push(`</div><input type="file" accept=".json" class="hidden"></div>`);
+      _push(`</div><input type="file" accept=".json" class="hidden">`);
+      _push(ssrRenderComponent(_component_Modal, {
+        modelValue: unref(showSaveModal),
+        "onUpdate:modelValue": ($event) => isRef(showSaveModal) ? showSaveModal.value = $event : null,
+        title: "Save Avatar",
+        message: "",
+        "confirm-text": "Save",
+        "cancel-text": "Cancel",
+        onConfirm: confirmSave
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<div class="mb-4"${_scopeId}><label class="text-xs font-medium text-[var(--color-text-secondary)] block mb-1"${_scopeId}>Name</label><input${ssrRenderAttr("value", unref(saveName))} type="text" class="w-full px-3 py-1.5 text-sm rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] text-[var(--color-text)] outline-none focus:border-[var(--color-accent)]" placeholder="My Avatar"${_scopeId}></div>`);
+          } else {
+            return [
+              createVNode("div", { class: "mb-4" }, [
+                createVNode("label", { class: "text-xs font-medium text-[var(--color-text-secondary)] block mb-1" }, "Name"),
+                withDirectives(createVNode("input", {
+                  "onUpdate:modelValue": ($event) => isRef(saveName) ? saveName.value = $event : null,
+                  type: "text",
+                  class: "w-full px-3 py-1.5 text-sm rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] text-[var(--color-text)] outline-none focus:border-[var(--color-accent)]",
+                  placeholder: "My Avatar",
+                  onKeyup: withKeys(confirmSave, ["enter"])
+                }, null, 40, ["onUpdate:modelValue"]), [
+                  [vModelText, unref(saveName)]
+                ])
+              ])
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`</div>`);
     };
   }
 });
@@ -348,4 +428,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=studio-CtTpkDqA.mjs.map
+//# sourceMappingURL=studio-DWsPHP5P.mjs.map
