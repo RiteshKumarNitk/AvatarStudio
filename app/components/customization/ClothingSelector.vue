@@ -24,6 +24,7 @@
 <script setup lang="ts">
 import type { ClothingStyle } from '~/types/avatar'
 import { CLOTHING_OPTIONS } from '~/utils/constants'
+import ColorSwatches from '../ui/ColorSwatches.vue'
 
 defineProps<{
   currentStyle: ClothingStyle

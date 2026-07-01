@@ -135,6 +135,17 @@ import { CATEGORY_TABS } from '~/utils/constants'
 import { useAvatarStore } from '~/stores/avatar'
 import { useUiStore } from '~/stores/ui'
 import { useAnimationStore } from '~/stores/animation'
+import HairSelector from './HairSelector.vue'
+import FaceSelector from './FaceSelector.vue'
+import EyeColorSelector from './EyeColorSelector.vue'
+import ClothingSelector from './ClothingSelector.vue'
+import AccessorySelector from './AccessorySelector.vue'
+import HatSelector from './HatSelector.vue'
+import BeardSelector from './BeardSelector.vue'
+import BodySelector from './BodySelector.vue'
+import ShoeSelector from './ShoeSelector.vue'
+import BackgroundSelector from './BackgroundSelector.vue'
+import AnimationSelector from '../avatar/AnimationSelector.vue'
 
 const avatarStore = useAvatarStore()
 const uiStore = useUiStore()

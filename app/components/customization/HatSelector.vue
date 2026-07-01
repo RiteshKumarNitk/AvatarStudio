@@ -24,6 +24,7 @@
 <script setup lang="ts">
 import type { HatType } from '~/types/avatar'
 import { HAT_OPTIONS } from '~/utils/constants'
+import ColorSwatches from '../ui/ColorSwatches.vue'
 
 defineProps<{
   currentHat: HatType

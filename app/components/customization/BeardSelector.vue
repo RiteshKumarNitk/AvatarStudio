@@ -28,6 +28,7 @@
 <script setup lang="ts">
 import type { BeardStyle } from '~/types/avatar'
 import { BEARD_STYLES, BEARD_COLORS } from '~/utils/constants'
+import ColorSwatches from '../ui/ColorSwatches.vue'
 
 defineProps<{
   currentStyle: BeardStyle

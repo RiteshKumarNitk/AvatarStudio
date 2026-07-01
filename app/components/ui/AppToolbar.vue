@@ -71,6 +71,9 @@
 </template>
 
 <script setup lang="ts">
+import ToolButton from './ToolButton.vue'
+import ThemeToggle from './ThemeToggle.vue'
+
 const uiStore = useUiStore()
 
 defineEmits<{

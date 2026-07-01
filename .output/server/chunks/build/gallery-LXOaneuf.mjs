@@ -1,7 +1,7 @@
 import { _ as __nuxt_component_0 } from './nuxt-link-DK_3ILh-.mjs';
 import { defineComponent, ref, computed, resolveComponent, mergeProps, withCtx, createTextVNode, unref, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderList, ssrInterpolate } from 'vue/server-renderer';
-import { u as useAvatarStore } from './avatar-kyCfDTh0.mjs';
+import { u as useAvatarStore } from './avatar-DjSoeW68.mjs';
 import '../_/nitro.mjs';
 import 'node:http';
 import 'node:https';
@@ -106,4 +106,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=gallery-DkxE_c-Y.mjs.map
+//# sourceMappingURL=gallery-LXOaneuf.mjs.map

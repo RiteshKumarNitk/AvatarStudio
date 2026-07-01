@@ -24,6 +24,7 @@
 <script setup lang="ts">
 import type { FaceShape } from '~/types/avatar'
 import { FACE_SHAPES, SKIN_TONES } from '~/utils/constants'
+import ColorSwatches from '../ui/ColorSwatches.vue'
 
 defineProps<{
   currentShape: FaceShape

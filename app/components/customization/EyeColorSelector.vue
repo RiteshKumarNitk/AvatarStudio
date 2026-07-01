@@ -7,6 +7,7 @@
 
 <script setup lang="ts">
 import { EYE_COLORS } from '~/utils/constants'
+import ColorSwatches from '../ui/ColorSwatches.vue'
 
 defineProps<{
   currentColor: string

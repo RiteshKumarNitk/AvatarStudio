@@ -6,7 +6,7 @@
     :shadows="false"
     :alpha="bgAlpha"
     :power-preference="'high-performance'"
-    :tone-mapping="true"
+    :tone-mapping="ACESFilmicToneMapping"
   >
     <TresPerspectiveCamera
       ref="cameraRef"
@@ -33,6 +33,7 @@
 </template>
 
 <script setup lang="ts">
+import { ACESFilmicToneMapping } from 'three'
 import { BACKGROUND_COLORS } from '~/utils/constants'
 import SceneLighting from './SceneLighting.vue'
 import StageEnvironment from './StageEnvironment.vue'
@@ -43,7 +44,7 @@ const avatarStore = useAvatarStore()
 const animationStore = useAnimationStore()
 
 const bgColor = computed(() => BACKGROUND_COLORS[avatarStore.config.background ?? 'studio'] ?? '#2a2a3a')
-const bgAlpha = computed(() => avatarStore.config.background === 'minimal' ? 0 : 1)
+const bgAlpha = computed(() => avatarStore.config.background === 'minimal')
 
 const canvasRef = ref()
 const cameraRef = ref()

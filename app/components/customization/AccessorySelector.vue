@@ -24,6 +24,7 @@
 <script setup lang="ts">
 import type { AccessoryType } from '~/types/avatar'
 import { ACCESSORY_OPTIONS } from '~/utils/constants'
+import ColorSwatches from '../ui/ColorSwatches.vue'
 
 defineProps<{
   currentAccessory: AccessoryType

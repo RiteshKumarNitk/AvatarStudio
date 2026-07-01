@@ -9,6 +9,14 @@ const BACKGROUND_STYLES = [
   { label: "Midnight", value: "midnight" },
   { label: "Minimal", value: "minimal" }
 ];
+const BACKGROUND_COLORS = {
+  studio: "#2a2a3a",
+  sunset: "#1a0a2a",
+  forest: "#0a1a0a",
+  ocean: "#0a0a2a",
+  midnight: "#050510",
+  minimal: "#f0f0f0"
+};
 const DEFAULT_AVATAR_CONFIG = {
   skinTone: "#f5d0b0",
   eyeColor: "#4a7a9c",
@@ -275,5 +283,5 @@ const useAvatarStore = defineStore("avatar", () => {
   };
 });
 
-export { ANIMATIONS as A, CATEGORY_TABS as C, useAvatarStore as u };
-//# sourceMappingURL=avatar-kyCfDTh0.mjs.map
+export { ANIMATIONS as A, BEARD_COLORS as B, CATEGORY_TABS as C, EYE_COLORS as E, FACE_SHAPES as F, HAIR_STYLES as H, SKIN_TONES as S, HAIR_COLORS as a, CLOTHING_OPTIONS as b, ACCESSORY_OPTIONS as c, HAT_OPTIONS as d, BEARD_STYLES as e, BODY_TYPES as f, SHOE_OPTIONS as g, BACKGROUND_STYLES as h, BACKGROUND_COLORS as i, useAvatarStore as u };
+//# sourceMappingURL=avatar-DjSoeW68.mjs.map

@@ -1,4 +1,4 @@
-import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { defineComponent, shallowRef, getCurrentInstance, provide, cloneVNode, h, createElementBlock, hasInjectionContext, inject, defineAsyncComponent, computed, unref, shallowReactive, ref, Suspense, Fragment, createApp, reactive, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, effectScope, mergeProps, getCurrentScope, toRef, withCtx, nextTick, isReadonly, isRef, toValue, toRaw, useSSRContext, isShallow, isReactive } from 'vue';
+import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { toRef, isRef, defineComponent, shallowRef, getCurrentInstance, provide, cloneVNode, h, createElementBlock, hasInjectionContext, inject, defineAsyncComponent, computed, unref, shallowReactive, ref, Suspense, Fragment, createApp, reactive, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, effectScope, mergeProps, getCurrentScope, withCtx, nextTick, isReadonly, toValue, toRaw, useSSRContext, isShallow, isReactive } from 'vue';
 import { p as parseURL, f as encodePath, n as decodePath, o as hasProtocol, q as isScriptProtocol, v as joinURL, w as withQuery, x as sanitizeStatusCode, y as getContext, $ as $fetch, z as defu, e as createError$1, A as executeAsync, B as hash } from '../_/nitro.mjs';
 import { u as useHead$1, h as headSymbol, b as baseURL } from '../routes/renderer.mjs';
 import { setActivePinia, createPinia, shouldHydrate } from 'pinia';
@@ -743,7 +743,7 @@ const _routes = [
     name: "gallery",
     path: "/gallery",
     meta: __nuxt_page_meta$1 || {},
-    component: () => import('./gallery-DkxE_c-Y.mjs')
+    component: () => import('./gallery-LXOaneuf.mjs')
   },
   {
     name: "studio",
@@ -754,7 +754,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-vfmxz350.mjs')
+    component: () => import('./index-dCT5gw0n.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -2018,7 +2018,7 @@ const Body = defineComponent({
 });
 const layouts = {
   default: defineAsyncComponent(() => import('./default-CbWlS8Yb.mjs').then((m) => m.default || m)),
-  studio: defineAsyncComponent(() => import('./studio-C-Il3_-t.mjs').then((m) => m.default || m))
+  studio: defineAsyncComponent(() => import('./studio-BO1_X4sZ.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
 const LayoutLoader = defineComponent({
@@ -2432,5 +2432,5 @@ let entry;
 }
 const entry_default = ((ssrContext) => entry(ssrContext));
 
-export { _export_sfc as _, useRouter as a, useNuxtApp as b, useRuntimeConfig as c, nuxtLinkDefaults as d, entry_default as default, encodeRoutePath as e, __nuxt_component_0 as f, navigateTo as n, resolveRouteObject as r, useHead as u };
+export { _export_sfc as _, useRouter as a, useNuxtApp as b, useRuntimeConfig as c, nuxtLinkDefaults as d, entry_default as default, encodeRoutePath as e, useState as f, __nuxt_component_0 as g, navigateTo as n, resolveRouteObject as r, useHead as u };
 //# sourceMappingURL=server.mjs.map

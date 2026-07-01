@@ -24,6 +24,7 @@
 <script setup lang="ts">
 import type { HairStyle } from '~/types/avatar'
 import { HAIR_STYLES, HAIR_COLORS } from '~/utils/constants'
+import ColorSwatches from '../ui/ColorSwatches.vue'
 
 defineProps<{
   currentStyle: HairStyle

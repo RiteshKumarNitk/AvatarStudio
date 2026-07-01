@@ -49,6 +49,9 @@
 </template>
 
 <script setup lang="ts">
+import AppToolbar from '~/components/ui/AppToolbar.vue'
+import Modal from '~/components/ui/Modal.vue'
+
 const uiStore = useUiStore()
 const avatarStore = useAvatarStore()
 const { downloadScreenshot, downloadJson } = useAvatarExport()

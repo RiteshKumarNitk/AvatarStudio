@@ -24,6 +24,7 @@
 <script setup lang="ts">
 import type { ShoeType } from '~/types/avatar'
 import { SHOE_OPTIONS } from '~/utils/constants'
+import ColorSwatches from '../ui/ColorSwatches.vue'
 
 defineProps<{
   currentShoes: ShoeType
